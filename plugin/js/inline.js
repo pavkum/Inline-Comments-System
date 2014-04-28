@@ -6,15 +6,21 @@
     onload: true
   };
   $.inline = function(options) {
-    var elem, elems, processElem, settings, _i, _len;
+    var attachBirdCss, elem, elems, processElem, settings, _i, _len;
     settings = $.extend({}, defaults, options);
     elems = $('[data-inline]');
+    attachBirdCss = function() {
+      var cssLink;
+      cssLink = $("<link rel='stylesheet' type='text/css' href='plugin/template/css/bird.css' />");
+      return $("head").append(cssLink);
+    };
     processElem = function(elem) {
       var elemID;
       elem = $(elem);
       elemID = elem.attr('data-inline');
       return elem.append(template);
     };
+    attachBirdCss();
     for (_i = 0, _len = elems.length; _i < _len; _i++) {
       elem = elems[_i];
       processElem(elem);

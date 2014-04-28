@@ -2,7 +2,7 @@
 <html>
     <head>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="inline1.js"></script>
+        <script src="plugin\js\inline.js"></script>
         
        <style>
            
@@ -10,38 +10,26 @@
                 background:#FAFAFA;   
            }
            
-           *
+         /*  *
            {
                 box-sizing: border-box;
-           }
+           }*/
            
             .container {
                margin:5%;
                padding:1%;
                box-shadow:1px 1px 5px #848484;
-               background:#FAFAFA;
+               //background:red;
            }
            
-           p:after {
-               display: none;
-                content: '';
-               content: url( 'http://icons.iconarchive.com/icons/rafiqul-hassan/blogger/32/Chat-icon.png');
-               text-align: center;
-               float: right;
-               width: 25px;
-                height: 25px;
-                //background: red;
-           }
-           
+         /*           
            .irc {
                 display: block;
                 float: right;
                 z-index: 100;
-                //width: 25px;
-                //height: 25px;
-                //background: red;
                 color: #848484;
-               
+               cursor:hand;
+               cursor:pointer;       
            }
            
            .irc > *
@@ -51,39 +39,81 @@
            }
            
            .beak {
-               display: inline-block;
-               //position: relative;
-               //left: 5px;
-               //top:-5px;
-              text-align: right;
-               width: 24px;
-               height: 24px;
-               border-width: 12px;
+               display:block;
+               float: left;
+               text-align: right;
+               position:relative;
+               top : 1px;       
+               width: 10px;
+               height: 8px;
+               border-width: 5px;
                border-style: solid;
                border-color: transparent;
-               
-               //border-right: 3px solid #848484;
+             
            }
            
            .triangle-left {
-               
-               border-right-color: #848484;
-               
+               border-right-color: #F22613;
            }
            .triangle-right {
+               border-left-color: #F22613;
+           }
+           
+           .body:before
+           {
+               content : "༿";
+               position: absolute;
+               left: 1px;
+               top: -14px;
+               display: block;
+               width: 5px;
+               height: 5px;
+               z-index: 5;
+               box-sizing:border-box;
                
-               border-left-color: #848484;
-               
+               font-weight:bold;
+                   
+                   
            }
            
            .body{
               
-                display: inline-block;
-               border-top-left-radius:  4px;
-               background: #848484;
-               width: 24px;
-               height: 24px;
+               position:relative;
+               display: block ;
+               float: left;
+               border-bottom-left-radius:  2px;
+               border-bottom-right-radius:  2px;
+               border-top-right-radius:  6px;
+               border-top-left-radius:  3px;
+               background: #F4D03F;
+               
+                   
+               width: 12px;
+               height: 16px;
+               color:#D91E18;
+               font-size:10px;
+               text-align: center ;
+               font-weight:bolder; 
+               box-shadow:0px 0px 1px #E87E04;
            }
+           
+           .body:after
+           {
+               content : '•';
+               position: absolute;
+               left: 1px;
+               top: -2px;
+               display: block;
+               width: 5px;
+               height: 5px;
+               z-index: 5;
+               box-sizing:border-box;
+               color: : #848484;
+               
+                   
+           }*/
+           
+          
            
         </style>
     </head>
@@ -95,21 +125,22 @@
                     </span>
                 
                 
-                <span class="irc">
+               <!-- <span class="irc">
                     
                     <span class="beak triangle-left">
-                                    
+                     
                     </span>
                     
                     <span class="body">
+                        +
                     </span>
                     
-                </span>
+                </span>-->
             
            
             </p>
             
-            <p>
+            <p data-inline="2">
                 This wasn’t always the case. Ubuntu’s former default email app Evolution boasts a built-in calendar tool of sorts that’s more than capable of meeting basic needs, and Mozilla Lightning is available for Thunderbird users.
             </p>
             
@@ -117,7 +148,7 @@
                 California aims to give GNOME desktop users a modern, fast and user-friendly calendar app that boasts quick setup time and EDS (Evolution Data Server) integration. Support for importing .ics files and hooking up with Google Calendar are also on the roadmap.
             </p>
             
-            <p>
+            <p data-inline="3">
                 The current state of development means that some of this planned feature set is yet to be fulfilled and currently relies on another EDS client (i.e., Evolution) before calendars become visible in California (yeah, it doesn’t talk to Geary yet).
 
 The application has yet to be added to Yorba’s Daily Builds PPA so that plucky Ubuntu users can try it.
